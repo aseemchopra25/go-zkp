@@ -14,6 +14,25 @@ https://datatracker.ietf.org/doc/html/rfc8235
 - G is a generator point over the curve that serves as a generator for the subgroup E(Fp) of prime order n
 - Cofactor H is ignored for secp256k1 EC
 
+
+## Algorithm 
+
+### Prover
+
+- Create Keypair
+- Create Random
+- Create Challenge
+- Compute r 
+- Send r and Pubkey to Verifier
+
+
+### Verifier
+
+- Verify Pubkey of Prover
+- Verify Proof
+
+
+
 # Some Research
 
 ## Elliptic Curve Secp256k1
