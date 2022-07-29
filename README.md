@@ -1,7 +1,7 @@
 
 # Schnorr Non-Interactive Zero Knowledge Proof using discrete log over prime number cyclic group 
 
-// https://datatracker.ietf.org/doc/html/rfc8235
+https://datatracker.ietf.org/doc/html/rfc8235
 
 - This is made non-interactive using Fiat-Shamir Transformation
 - No interaction is necessary between prover and verifier
