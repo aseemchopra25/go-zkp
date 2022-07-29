@@ -1,0 +1,5 @@
+package proof
+
+func CreateProof() {
+
+}
