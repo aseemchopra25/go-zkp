@@ -3,7 +3,7 @@
 
 https://datatracker.ietf.org/doc/html/rfc8235
 
-- This has been made non-interactive using Fiat-Shamir Transformation and using a secure cryptographic hash function to issue the challenge instead; TODO
+- This has been made non-interactive using Fiat-Shamir Transformation and using a secure cryptographic hash function to issue the challenge 
 - No interaction is necessary between prover and verifier
 
 ## Assumptions
