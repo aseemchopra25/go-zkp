@@ -29,7 +29,6 @@ func CreateProof() {
 
 	db.DB.RandomKey, _ = ecdsa.GenerateKey(db.DB.Curve, rand.Reader)
 	db.DB.Random = db.DB.RandomKey.PublicKey.X.Bytes()
-	db.DB.Pubkey = db.DB.Key.PublicKey.X.Bytes()
 
 	// Challenge: This is required for verification checks; by GxR + AxC <----here
 	cbytes := sha256.Sum256(concat(db.DB.Curve.Params().Gx.Bytes(), db.DB.Random, db.DB.Pubkey))
