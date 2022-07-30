@@ -37,7 +37,7 @@ func CreateProof() {
 
 	// Response
 	r := new(big.Int)
-	r.Mul(db.DB.Key.D, db.DB.Challenge)
+	r.Mul(db.DB.Key.D, &db.DB.Challenge)
 	r.Sub(db.DB.RandomKey.D, r)
 	r.Mod(r, db.DB.Curve.Params().N)
 	db.DB.Response = r
@@ -47,6 +47,8 @@ func VerifyProof() {
 	// Check if X and Y coordinates of Public key given lie on Curve P256
 	if !db.DB.Curve.IsOnCurve(db.DB.Key.X, db.DB.Key.Y) {
 		fmt.Println("Verification Failed!")
+	} else {
+		fmt.Println("Pass!")
 	}
 
 }

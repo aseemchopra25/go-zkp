@@ -12,7 +12,7 @@ type Store struct {
 	Pubkey    []byte
 	RandomKey *ecdsa.PrivateKey
 	Random    []byte
-	Challenge *big.Int
+	Challenge big.Int
 	Response  *big.Int
 }
 
