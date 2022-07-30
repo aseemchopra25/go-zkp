@@ -31,7 +31,7 @@ func CreateProof() {
 	db.DB.Random = db.DB.RandomKey.PublicKey.X.Bytes()
 	db.DB.Pubkey = db.DB.Key.PublicKey.X.Bytes()
 
-	// Challenge: This seems to be optional/mostly signature related
+	// Challenge: This is required for verification checks; by GxR + AxC <----here
 	cbytes := sha256.Sum256(concat(db.DB.Curve.Params().Gx.Bytes(), db.DB.Random, db.DB.Pubkey))
 	db.DB.Challenge.SetBytes((cbytes[:]))
 
