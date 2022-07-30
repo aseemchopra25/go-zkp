@@ -3,7 +3,7 @@
 
 https://datatracker.ietf.org/doc/html/rfc8235
 
-- This can be made non-interactive using Fiat-Shamir Transformation and using a secure cryptographic hash function to issue the challenge instead; TODO
+- This has been made non-interactive using Fiat-Shamir Transformation and using a secure cryptographic hash function to issue the challenge instead; TODO
 - No interaction is necessary between prover and verifier
 
 ## Assumptions
@@ -16,21 +16,20 @@ https://datatracker.ietf.org/doc/html/rfc8235
 
 
 ## Algorithm 
-TODO: Add Fiat Shamir Transformation
 
 ### Prover
 
 - Create Keypair
 - Create Random
-- Create Challenge
+- Create Challenge (sha256sum of Gx, Random, Pubkey )
 - Compute r 
-- Send r and Pubkey to Verifier
+- Send r and Pubkey and Random  to Verifier
 
 
 ### Verifier
 
-- Verify Pubkey of Prover
-- Verify Proof
+- Verify Pubkey of Prover to be on the elliptic Curve
+- Verify Proof using sent challenge (sha256 format) with the Random 
 
 
 
