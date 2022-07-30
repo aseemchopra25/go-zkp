@@ -1,9 +1,19 @@
 package db
 
-import "crypto/ecdsa"
+import (
+	"crypto/ecdsa"
+	"crypto/elliptic"
+	"math/big"
+)
 
 type Store struct {
-	Key *ecdsa.PrivateKey // Stores Key of the Prover
+	Curve     elliptic.Curve
+	Key       *ecdsa.PrivateKey // Stores Key of the Prover
+	Pubkey    []byte
+	RandomKey *ecdsa.PrivateKey
+	Random    []byte
+	Challenge *big.Int
+	Response  *big.Int
 }
 
-var DB = Store{}
+var DB = Store{Curve: elliptic.P256()}
