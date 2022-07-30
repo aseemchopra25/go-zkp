@@ -9,4 +9,5 @@ func main() {
 
 	keygen.Keygen()     // 1. Generate Key
 	proof.CreateProof() // 2. Create Proof
+	proof.VerifyProof() // 3. Verify Proof
 }

@@ -4,6 +4,7 @@ import (
 	"crypto/ecdsa"
 	"crypto/rand"
 	"crypto/sha256"
+	"fmt"
 	"math/big"
 
 	"github.com/aseemchopra25/go-zkp/db"
@@ -40,4 +41,12 @@ func CreateProof() {
 	r.Sub(db.DB.RandomKey.D, r)
 	r.Mod(r, db.DB.Curve.Params().N)
 	db.DB.Response = r
+}
+
+func VerifyProof() {
+	// Check if X and Y coordinates of Public key given lie on Curve P256
+	if !db.DB.Curve.IsOnCurve(db.DB.Key.X, db.DB.Key.Y) {
+		fmt.Println("Verification Failed!")
+	}
+
 }
